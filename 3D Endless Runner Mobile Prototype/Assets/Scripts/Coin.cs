@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
             PlayerManager.gainHP += 1;
             Destroy(gameObject);
 
-            if (PlayerManager.gainHP % 100 == 0) 
+            if (PlayerManager.gainHP % 50 == 0) 
             {
                 Hearts.health +=1;
             }

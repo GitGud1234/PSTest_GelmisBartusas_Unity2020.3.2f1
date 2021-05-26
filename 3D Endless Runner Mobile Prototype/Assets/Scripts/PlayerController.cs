@@ -6,12 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 direction;
-    public float playerSpeed;
-    public float tempSpeed = 15;
-    public float tempSlow = 5;
+    private float playerSpeed;
+    private float tempSpeed = 12;
+    private float tempSlow = 4;
 
     private int currentLane = 1; //0:left, 1:middle, 2:right
-    public float laneDistance = 4; //distance between lanes
+    private float laneDistance = 3; //distance between lanes
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         direction.z = playerSpeed;
+        //Debug.Log(playerSpeed);
 
         //if(Input.GetKeyDown(KeyCode.RightArrow)) {
         if(SwipeManager.swipeRight) {
@@ -55,8 +56,8 @@ public class PlayerController : MonoBehaviour
         if (Hearts.health == 3) 
         {
             playerSpeed = tempSpeed;
-        } else
-            playerSpeed = 10;
+        } //else
+            //playerSpeed = 9;
     }
 
     private void FixedUpdate()
@@ -90,6 +91,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator slowTimer()
     {
         yield return new WaitForSeconds(1);
-        playerSpeed = 10;
+        playerSpeed = 9;
     }
 }
