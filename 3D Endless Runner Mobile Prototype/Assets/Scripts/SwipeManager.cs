@@ -52,7 +52,7 @@ public class SwipeManager : MonoBehaviour
                 swipeDelta = (Vector2)Input.mousePosition - startTouch;
         }
         //Did we cross the distance?
-        if (swipeDelta.magnitude > 125)
+        if (swipeDelta.magnitude > 50) //125
         {
             //which direction?
             float x = swipeDelta.x;

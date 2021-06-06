@@ -22,16 +22,13 @@ public class PlayerController : MonoBehaviour
         direction.z = playerSpeed;
         //Debug.Log(playerSpeed);
 
-        //if(Input.GetKeyDown(KeyCode.RightArrow)) {
-        if(SwipeManager.swipeRight) {
-            
+        if(SwipeManager.swipeRight || Input.GetKeyDown(KeyCode.RightArrow)) {
             currentLane++;
             if(currentLane == 3)
             currentLane = 2;
         }
 
-        //if(Input.GetKeyDown(KeyCode.LeftArrow)) {
-        if(SwipeManager.swipeLeft) {
+        if(SwipeManager.swipeLeft || Input.GetKeyDown(KeyCode.LeftArrow)) {
             currentLane--;
             if(currentLane == -1)
             currentLane = 0;
